@@ -1,8 +1,11 @@
+
+
+
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
-
+const TestLog = require("../models/TestLog"); // Mongoose model
 // Sign Up
 router.post('/signup', async (req, res) => {
   const { username, password } = req.body;
@@ -37,11 +40,5 @@ router.post('/login', async (req, res) => {
 });
 
 
-
-
-// app.get('/', (req, res) => {
-//     res.send('Welcome to the homepage!');
-//   });
-  
-
 module.exports = router;
+
